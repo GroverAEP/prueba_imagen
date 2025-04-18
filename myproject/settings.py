@@ -40,7 +40,7 @@ if RENDER_EXTERNAL_HOSTNAME:
 
 STATICFILES_DIRS = [
     BASE_DIR / "prueba_imagenes" / "static",
-    os.path.join(BASE_DIR, 'prueba_imagenes/static'),  # Asumiendo que está en esa carpeta
+    # os.path.join(BASE_DIR, 'prueba_imagenes/static'),  # Asumiendo que está en esa carpeta
 
     # BASE_DIR / "prueba_imagenes\static\images\cats_3.png",
 ]
