@@ -1,0 +1,8 @@
+{% load static %}
+
+{% for producto in productos %}
+  <div>
+    <h3>{{ producto.nombre }}</h3>
+    <img src="{% static producto.imagen %}" alt="{{ producto.nombre }}">
+  </div>
+{% endfor %}

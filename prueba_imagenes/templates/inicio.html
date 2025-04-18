@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Productos</title>
+    <style>
+        .contenedor {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            padding: 40px;
+        }
+        .item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 200px;
+            text-align: center;
+        }
+        .item img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Lista de Productos</h1>
+    <div class="contenedor">
+        {% for producto in productos %}
+            <div class="item">
+                <img src="{% static producto.imagen %}
+                " alt="{{ producto.nombre }}">
+                <p>{{ producto.nombre }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
