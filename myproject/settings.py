@@ -40,6 +40,7 @@ if RENDER_EXTERNAL_HOSTNAME:
 
 STATICFILES_DIRS = [
     BASE_DIR / "prueba_imagenes" / "static",
+    os.path.join(BASE_DIR, 'prueba_imagenes/static'),  # Asumiendo que está en esa carpeta
 
     # BASE_DIR / "prueba_imagenes\static\images\cats_3.png",
 ]
@@ -134,6 +135,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
+# STATIC_ROOT = BASE_DIR / 'static'  # 👈 esta línea es clave
 
 STATIC_URL = '/static/'
 if not DEBUG:

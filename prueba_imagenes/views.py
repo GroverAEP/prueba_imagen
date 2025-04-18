@@ -32,7 +32,7 @@ def cargar_productos_desde_static(request):
             # Construir la ruta relativa que Django usará para acceder al archivo estático
             
             # Crear el producto si no existe
-            ruta_relativa = f'prueba_imagenes\static\images\{nombre_archivo}'  # Esta es la ruta que usarás en los templates
+            ruta_relativa = f'images\{nombre_archivo}'  # Esta es la ruta que usarás en los templates
             producto, creado = Producto.objects.get_or_create(
                 nombre=os.path.splitext(nombre_archivo)[0],  # El nombre será el nombre del archivo sin extensión
                 imagen=ruta_relativa  # Guardar la ruta relativa en el campo imagen
