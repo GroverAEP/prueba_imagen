@@ -9,10 +9,9 @@ def lista_productos(request):
     productos = Producto.objects.all()
     print(productos)
     for producto in productos:
-        route = os.path.join(settings.BASE_DIR, producto.imagen)
-        producto.imagen = route
-    print(route)
-
+        # Extraer solo el nombre del archivo de la imagen
+        nombre_archivo = os.path.basename(producto.imagen)
+        producto.imagen = f"images/{nombre_archivo}"  # Ruta relativa a /static/
     return render(request, 'inicio.html', {
         'productos': productos})
 
